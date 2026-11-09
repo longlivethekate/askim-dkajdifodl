@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에스킴·블루밍테라 10월 월간 리포트 (2026/10/15~10/31)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light dark;
+  --font-anthropic-sans: 'Noto Sans KR', -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-anthropic-serif: 'Noto Serif KR', 'AppleMyungjo', Georgia, serif;
+  --color-bg: #f6f5f1; --color-panel: #ffffff; --color-fg: #1f1e1c; --color-fg-muted: #6b6a66; --color-border-line: #e4e2dc;
+  --color-ok: #2f7d4f; --color-warn: #a86b12; --color-bad: #b23a3a;
+  --s0: #3b6fd9; --s1: #d9773b; --s2: #2f9d8f; --s3: #c04f7a; --s4: #6a52c7; --s5: #8a8f2e; --s6: #c9a227; --s7: #7a7a7a;
+  --cds-font-size-caption: 12px; --cds-font-size-body: 14px; --cds-font-size-heading: 16px; --cds-font-size-title: 28px; --cds-font-weight-medium: 600;
+  --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 14px; --cds-gap-lg: 20px; --cds-gap-xl: 32px;
+  --cds-pad-xs: 4px; --cds-pad-sm: 8px; --cds-pad-md: 12px; --cds-pad-lg: 18px; --cds-pad-xl: 28px;
+  --cds-radius: 10px; --cds-chart-muted: #c8c6c0; --cds-chart-grid: #ecebe6; --cds-chart-axis: #bdbbb5; --cds-chart-reference: #8f8d88;
+  --cds-surface-popover: #ffffff; --cds-border: #dddbd5; --cds-shadow-popover: 0 6px 20px rgba(0,0,0,.12); --cds-text-secondary: #6b6a66; --cds-dur-slow: .3s;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1b1a18; --color-panel: #252422; --color-fg: #eeece6; --color-fg-muted: #a3a19b; --color-border-line: #3a3935;
+    --color-ok: #6cc58f; --color-warn: #e0a24a; --color-bad: #ef7d7d;
+    --s0: #6f9bf0; --s1: #f0a06a; --s2: #5cc4b6; --s3: #e07fa6; --s4: #9c88ef; --s5: #b8bd57; --s6: #e6c45a; --s7: #a0a0a0;
+    --cds-chart-muted: #55534e; --cds-chart-grid: #33322f; --cds-chart-axis: #5a5853; --cds-chart-reference: #8a8883;
+    --cds-surface-popover: #2e2d2a; --cds-border: #44433f; --cds-shadow-popover: 0 6px 20px rgba(0,0,0,.5); --cds-text-secondary: #a3a19b;
+  }
+}
+html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); }
+#dash-root { padding: clamp(12px, 3vw, 32px); }
+.wr b, .wr strong { font-weight: 700; }
+.dash-skeleton { background: var(--cds-chart-grid); border-radius: 6px; }
+</style>
+<style>
+#dash-root { --dash-gutter: clamp(12px, 3vw, 32px); }
+.wr { max-width: 1240px; margin-inline: auto; font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.hero { position: relative; overflow: hidden; border-radius: var(--cds-radius); border: 1px solid var(--color-border-line); padding: var(--cds-pad-xl) var(--cds-pad-xl) var(--cds-pad-lg); margin-bottom: var(--cds-gap-lg);
+  background: linear-gradient(120deg, color-mix(in srgb, var(--c0, #888) 16%, var(--color-panel)) 0%, var(--color-panel) 55%, color-mix(in srgb, var(--c1, #888) 14%, var(--color-panel)) 100%); }
+.hero .eyebrow { font-size: var(--cds-font-size-caption); letter-spacing: .08em; text-transform: uppercase; color: var(--color-fg-muted); margin-bottom: var(--cds-gap-xs); }
+.hero h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.35); line-height: 1.15; margin: 0 0 var(--cds-gap-md); }
+.meta { display: grid; grid-template-columns: max-content 1fr; gap: 2px var(--cds-gap-md); font-size: var(--cds-font-size-body); }
+.meta dt { color: var(--color-fg-muted); }
+.meta dd { margin: 0; font-variant-numeric: tabular-nums; }
+.tabs { position: sticky; top: 0; z-index: 3; display: flex; gap: var(--cds-gap-xs); flex-wrap: wrap; padding: var(--cds-pad-xs); margin-bottom: var(--cds-gap-lg); background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); }
+.tab { background: none; border: 0; border-radius: var(--cds-radius); padding: var(--cds-pad-sm) var(--cds-pad-md); font: inherit; font-size: var(--cds-font-size-body); color: var(--color-fg-muted); cursor: pointer; }
+.tab:hover { color: var(--color-fg); }
+.tab[aria-selected="true"] { color: var(--color-bg); background: var(--color-fg); }
+.pane[hidden] { display: none; }
+.sec { display: flex; align-items: baseline; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: var(--cds-gap-xl) 0 var(--cds-gap-sm); }
+.sec:first-child { margin-top: 0; }
+.sec small { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-weight: 400; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: var(--cds-gap-md); margin-bottom: var(--cds-gap-md); }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: var(--cds-gap-md); margin-bottom: var(--cds-gap-md); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: var(--cds-gap-md); margin-bottom: var(--cds-gap-md); }
+.card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; }
+.card.mb { margin-bottom: var(--cds-gap-md); }
+.card h3 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-xs); }
+.card .note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0 0 var(--cds-gap-md); line-height: 1.5; }
+.tile { position: relative; overflow: hidden; }
+.tile::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--accent, var(--c0)); }
+.tile .lab { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.tile .big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: var(--cds-gap-xs) 0 2px; font-variant-numeric: tabular-nums; }
+.tile .row { display: flex; gap: var(--cds-gap-sm); flex-wrap: wrap; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.pill { display: inline-block; padding: 0 6px; border-radius: 999px; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; background: color-mix(in srgb, var(--color-fg) 8%, transparent); color: var(--color-fg); }
+.pill.up { background: color-mix(in srgb, var(--color-ok) 16%, transparent); color: var(--color-ok); }
+.pill.down { background: color-mix(in srgb, var(--color-bad) 14%, transparent); color: var(--color-bad); }
+.site-head { display: flex; align-items: center; gap: var(--cds-gap-sm); margin-bottom: var(--cds-gap-md); }
+.site-head .dot { width: 10px; height: 10px; border-radius: 50%; }
+.site-head h3 { margin: 0; }
+.mini { display: grid; grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr)); gap: var(--cds-gap-sm); margin-bottom: var(--cds-gap-md); }
+.mini div { background: color-mix(in srgb, var(--color-fg) 4%, transparent); border-radius: var(--cds-radius); padding: var(--cds-pad-sm); }
+.mini .l { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.mini .v { font-family: var(--font-anthropic-serif); font-size: var(--cds-font-size-heading); font-variant-numeric: tabular-nums; margin-top: 2px; }
+.tw { overflow-x: auto; }
+.tw.tall { max-height: 26rem; overflow: auto; }
+.tbl { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.tbl th { text-align: left; color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); position: sticky; top: 0; background: var(--color-panel); white-space: nowrap; z-index: 1; }
+.tbl td { padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.tbl .n { text-align: right; white-space: nowrap; }
+.tbl tr:hover td { background: color-mix(in srgb, var(--color-fg) 3%, transparent); }
+.tbl td.heat { text-align: center; border-radius: 4px; }
+.list { margin: 0; padding-left: 1.2em; font-size: var(--cds-font-size-body); line-height: 1.65; }
+.list li { margin-bottom: var(--cds-gap-xs); }
+.wr .list b { font-weight: var(--cds-font-weight-medium); }
+.tag { display: inline-block; font-size: var(--cds-font-size-caption); border-radius: 999px; padding: 0 8px; margin-right: var(--cds-gap-xs); background: color-mix(in srgb, var(--tc, var(--c0)) 16%, transparent); color: var(--color-fg); white-space: nowrap; }
+.chart { position: relative; min-height: 240px; }
+.chart.short { min-height: 150px; }
+.tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; display: none; z-index: 4; }
+.tip .d { color: var(--cds-text-secondary); }
+.sw { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; }
+.legend { display: flex; flex-wrap: wrap; gap: 2px var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-bottom: var(--cds-gap-xs); }
+.seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 2px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); margin: 0 var(--cds-gap-sm) var(--cds-gap-sm) 0; }
+.seg button { border: 0; background: none; font: inherit; font-size: var(--cds-font-size-caption); padding: 2px 10px; border-radius: calc(var(--cds-radius) - 2px); color: var(--color-fg-muted); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); }
+.callout { border-left: 3px solid var(--c3); background: color-mix(in srgb, var(--c3) 8%, transparent); border-radius: 0 var(--cds-radius) var(--cds-radius) 0; padding: var(--cds-pad-sm) var(--cds-pad-md); font-size: var(--cds-font-size-caption); line-height: 1.55; margin-top: var(--cds-gap-sm); }
+.tl { position: relative; padding-left: 1.6rem; }
+.tl::before { content: ""; position: absolute; left: .55rem; top: .3rem; bottom: .3rem; width: 2px; background: var(--color-border-line); }
+.tl-day { position: relative; margin-bottom: var(--cds-gap-md); }
+.tl-day .num { position: absolute; left: -1.6rem; top: 0; width: 1.2rem; height: 1.2rem; border-radius: 50%; background: var(--c4); color: var(--color-bg); font-size: 11px; display: flex; align-items: center; justify-content: center; }
+.tl-day h4 { margin: 0 0 var(--cds-gap-xs); font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); }
+.tl-day ul { list-style: none; margin: 0; padding: 0; font-size: var(--cds-font-size-caption); line-height: 1.6; }
+.tl-day li { margin-bottom: 3px; }
+.post-card h4 { margin: 0 0 var(--cds-gap-sm); font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); display: flex; justify-content: space-between; }
+.post-card ol { margin: 0; padding-left: 1.3em; font-size: var(--cds-font-size-caption); line-height: 1.55; }
+.post-card li { margin-bottom: var(--cds-gap-xs); }
+.post-card .pv { color: var(--color-fg-muted); white-space: nowrap; }
+.sm-title { display: flex; justify-content: space-between; font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin-bottom: 4px; }
+.sm-title span { font-weight: 400; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.wr [data-dash-source-state=empty] { color: transparent; }
+.wr [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+.fail { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 120px; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.fail i { width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); display: inline-block; }
+</style>
+<style>.wr{--c0:var(--s0);--c1:var(--s1);--c2:var(--s2);--c3:var(--s3);--c4:var(--s4);--c5:var(--s5)} .chartbox{margin-top:var(--cds-gap-sm)} .st{white-space:nowrap}</style>
+</head><body><div id="dash-root"><div class="wr">
+<header class="hero" id="top">
+<div class="eyebrow">Monthly performance report · 에스킴컴퍼니 · 블루밍테라</div>
+<h1>에스킴·블루밍테라 10월 월간 리포트</h1>
+<dl class="meta"><dt>기간</dt><dd>2026/10/15~2026/10/31 (운영 첫 17일)</dd><dt>비교 기준</dt><dd>운영 전 같은 길이 기간 (구글 SA 9/28~10/14, 네이버 SA 10/1~14)</dd><dt>운영 매체</dt><dd>구글 검색광고, 네이버 검색광고, LinkedIn(10/29 시작), 네이버 블로그</dd></dl>
+</header>
+<nav class="tabs" role="tablist">
+<button class="tab" data-tab="sum" aria-selected="true">요약</button><button class="tab" data-tab="media" aria-selected="false">매체별 성과</button><button class="tab" data-tab="site" aria-selected="false">사이트·문의</button><button class="tab" data-tab="issue" aria-selected="false">11월 계획·10월 이슈</button><button class="tab" data-tab="setup" aria-selected="false">세팅 내역</button>
+</nav>
+
+<section class="pane" id="sum">
+<div class="sec">광고비 <small>10/15~31 합계 · LinkedIn은 10/29 시작</small></div>
+<div class="tiles"><div class='card tile' style='--accent:var(--color-fg)'><div class='lab'>전체</div><div class='big'>612,253원</div><div class='row'><span>10/15~31 합계</span></div></div><div class='card tile' style='--accent:var(--c1)'><div class='lab'>구글 SA · 블루밍테라</div><div class='big'>201,776원</div><div class='row'><span>Global 166,699원 · Korean 35,077원</span></div></div><div class='card tile' style='--accent:var(--c0)'><div class='lab'>구글 SA · 에스킴</div><div class='big'>162,475원</div><div class='row'><span>17일</span></div></div><div class='card tile' style='--accent:var(--c2)'><div class='lab'>네이버 SA · 에스킴</div><div class='big'>50,829원</div><div class='row'><span>17일</span></div></div><div class='card tile' style='--accent:var(--c4)'><div class='lab'>LinkedIn · 블루밍테라</div><div class='big'>197,173원</div><div class='row'><span>10/29~31 (3일, UTC)</span></div></div></div>
+<div class="grid">
+<div class="card"><h3>10월 핵심 내용</h3><ul class="list">
+<li><b>첫 2주는 성과를 키우기보다 '제대로 재는 기반'을 만드는 데 집중했습니다.</b> 전환 목표 오류, UTM·추적 URL 누락, 내부 접속 혼입을 바로잡아 11월부터 매체별 문의를 같은 기준으로 비교할 수 있게 됐습니다.</li>
+<li><b>블루밍테라 구글 광고는 '많은 클릭'에서 '목표 국가 클릭'으로 바뀌었습니다.</b> 운영 전에는 국가 미설정과 검색 파트너 노출로 하루 100건 안팎의 저단가 클릭(클릭당 약 90원)이 비목표 국가에서 발생했습니다. 10/20 정비 후에는 클릭이 하루 4건 수준으로 줄고 클릭당 비용은 2,553원이 됐지만, 목표 국가 검색에서만 클릭이 나오고 있습니다.</li>
+<li><b>두 브랜드 모두 구글 광고에서 첫 실제 문의가 나왔습니다.</b> 블루밍테라는 10/26 SA - Korean, 에스킴은 10/28 구글 광고 유입입니다.</li>
+<li><b>블루밍테라 LinkedIn 랜딩 테스트를 10/29 시작했습니다.</b> 3일(UTC) 동안 클릭 15건, 광고비 197,173원이며, 본격적인 비교는 11월 데이터로 진행합니다.</li>
+</ul></div>
+<div class="card"><h3>문의 (GA4 문의 이벤트 기준)</h3>
+<div class="mini"><div><div class="l">블루밍테라 실제 문의</div><div class="v">1</div></div><div><div class="l">에스킴 실제 문의</div><div class="v">1</div></div></div>
+<div class="tw"><table class="tbl"><thead><tr><th>날짜</th><th>사이트</th><th>유입 경로</th><th>판단</th></tr></thead><tbody>
+<tr><td>10/26</td><td>블루밍테라</td><td>google / cpc (SA - Korean)</td><td>실제 문의</td></tr>
+<tr><td>10/28</td><td>에스킴</td><td>google / cpc</td><td>실제 문의</td></tr>
+</tbody></table></div>
+<p class="note" style="margin-top:var(--cds-gap-sm)">이 밖의 문의 이벤트는 세팅·검수 과정의 테스트(블루밍테라 10/19·21·22, 에스킴 10/21·22·29)로 판단해 제외했습니다. 에스킴은 10/19 이후 확인분 기준입니다.</p>
+</div></div>
+</section>
+
+<section class="pane" id="media" hidden>
+<div class="sec">구글 검색광고 · 블루밍테라 SA - Global</div>
+<div class="card mb"><h3>일별 클릭 (9/28~10/31)</h3><p class="note">흐린 막대는 정비 전, 진한 막대는 10/21 정비 적용 이후입니다. 가장 많은 날은 하루 150건이었습니다. 막대에 마우스를 올리면 클릭당 비용이 보입니다.</p><div class="chartbox tw"><svg viewBox='0 0 760 170' width='100%' role='img' aria-label='SA - Global 일별 클릭'><rect x='1.0' y='10.0' width='20.4' height='120.0' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>09-28 클릭 150건 · 클릭당 비용 75원</title></rect><text x='11.2' y='148' font-size='10' text-anchor='middle' fill='var(--color-fg-muted)'>9/28</text><rect x='23.4' y='37.2' width='20.4' height='92.8' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>09-29 클릭 116건 · 클릭당 비용 78원</title></rect><rect x='45.7' y='39.6' width='20.4' height='90.4' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>09-30 클릭 113건 · 클릭당 비용 74원</title></rect><rect x='68.1' y='79.6' width='20.4' height='50.4' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-01 클릭 63건 · 클릭당 비용 80원</title></rect><text x='78.2' y='148' font-size='10' text-anchor='middle' fill='var(--color-fg-muted)'>10/1</text><rect x='90.4' y='27.6' width='20.4' height='102.4' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-02 클릭 128건 · 클릭당 비용 94원</title></rect><rect x='112.8' y='39.6' width='20.4' height='90.4' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-03 클릭 113건 · 클릭당 비용 100원</title></rect><rect x='135.1' y='31.6' width='20.4' height='98.4' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-04 클릭 123건 · 클릭당 비용 98원</title></rect><rect x='157.5' y='80.4' width='20.4' height='49.6' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-05 클릭 62건 · 클릭당 비용 101원</title></rect><rect x='179.8' y='34.8' width='20.4' height='95.2' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-06 클릭 119건 · 클릭당 비용 84원</title></rect><rect x='202.2' y='24.4' width='20.4' height='105.6' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-07 클릭 132건 · 클릭당 비용 95원</title></rect><rect x='224.5' y='59.6' width='20.4' height='70.4' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-08 클릭 88건 · 클릭당 비용 114원</title></rect><text x='234.7' y='148' font-size='10' text-anchor='middle' fill='var(--color-fg-muted)'>10/8</text><rect x='246.9' y='33.2' width='20.4' height='96.8' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-09 클릭 121건 · 클릭당 비용 75원</title></rect><rect x='269.2' y='33.2' width='20.4' height='96.8' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-10 클릭 121건 · 클릭당 비용 82원</title></rect><rect x='291.6' y='26.8' width='20.4' height='103.2' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-11 클릭 129건 · 클릭당 비용 77원</title></rect><rect x='313.9' y='73.2' width='20.4' height='56.8' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-12 클릭 71건 · 클릭당 비용 86원</title></rect><rect x='336.3' y='59.6' width='20.4' height='70.4' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-13 클릭 88건 · 클릭당 비용 96원</title></rect><rect x='358.6' y='38.8' width='20.4' height='91.2' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-14 클릭 114건 · 클릭당 비용 107원</title></rect><rect x='381.0' y='52.4' width='20.4' height='77.6' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-15 클릭 97건 · 클릭당 비용 120원</title></rect><text x='391.2' y='148' font-size='10' text-anchor='middle' fill='var(--color-fg-muted)'>10/15</text><rect x='403.4' y='70.0' width='20.4' height='60.0' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-16 클릭 75건 · 클릭당 비용 117원</title></rect><rect x='425.7' y='58.0' width='20.4' height='72.0' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-17 클릭 90건 · 클릭당 비용 147원</title></rect><rect x='448.1' y='42.0' width='20.4' height='88.0' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-18 클릭 110건 · 클릭당 비용 151원</title></rect><rect x='470.4' y='83.6' width='20.4' height='46.4' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-19 클릭 58건 · 클릭당 비용 160원</title></rect><rect x='492.8' y='120.4' width='20.4' height='9.6' fill='color-mix(in srgb, var(--c1) 35%, transparent)' rx='2'><title>10-20 클릭 12건 · 클릭당 비용 206원</title></rect><rect x='515.1' y='130.0' width='20.4' height='0.0' fill='var(--c1)' rx='2'><title>10-21 클릭 0건 · 클릭당 비용 —</title></rect><text x='525.3' y='148' font-size='10' text-anchor='middle' fill='var(--color-fg-muted)'>10/21</text><rect x='537.5' y='128.4' width='20.4' height='1.6' fill='var(--c1)' rx='2'><title>10-22 클릭 2건 · 클릭당 비용 823원</title></rect><rect x='559.8' y='126.0' width='20.4' height='4.0' fill='var(--c1)' rx='2'><title>10-23 클릭 5건 · 클릭당 비용 2,834원</title></rect><rect x='582.2' y='125.2' width='20.4' height='4.8' fill='var(--c1)' rx='2'><title>10-24 클릭 6건 · 클릭당 비용 3,067원</title></rect><rect x='604.5' y='126.0' width='20.4' height='4.0' fill='var(--c1)' rx='2'><title>10-25 클릭 5건 · 클릭당 비용 2,796원</title></rect><rect x='626.9' y='126.0' width='20.4' height='4.0' fill='var(--c1)' rx='2'><title>10-26 클릭 5건 · 클릭당 비용 2,787원</title></rect><rect x='649.2' y='126.8' width='20.4' height='3.2' fill='var(--c1)' rx='2'><title>10-27 클릭 4건 · 클릭당 비용 2,356원</title></rect><rect x='671.6' y='127.6' width='20.4' height='2.4' fill='var(--c1)' rx='2'><title>10-28 클릭 3건 · 클릭당 비용 2,082원</title></rect><text x='681.8' y='148' font-size='10' text-anchor='middle' fill='var(--color-fg-muted)'>10/28</text><rect x='693.9' y='126.0' width='20.4' height='4.0' fill='var(--c1)' rx='2'><title>10-29 클릭 5건 · 클릭당 비용 2,405원</title></rect><rect x='716.3' y='126.8' width='20.4' height='3.2' fill='var(--c1)' rx='2'><title>10-30 클릭 4건 · 클릭당 비용 2,472원</title></rect><rect x='738.6' y='128.4' width='20.4' height='1.6' fill='var(--c1)' rx='2'><title>10-31 클릭 2건 · 클릭당 비용 2,482원</title></rect><text x='748.8' y='148' font-size='10' text-anchor='middle' fill='var(--color-fg-muted)'>10/31</text><line x1='514.1' x2='514.1' y1='4' y2='132' stroke='var(--cds-chart-reference)' stroke-dasharray='4 3'/><text x='518.1' y='14' font-size='11' fill='var(--color-fg)'>10/21 정비 적용</text><line x1='0' x2='760' y1='130' y2='130' stroke='var(--cds-chart-axis)'/></svg></div>
+<div class="tw" style="margin-top:var(--cds-gap-md)"><table class="tbl"><thead><tr><th>구간</th><th class='n'>일수</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>클릭률</th><th class='n'>클릭당 비용</th><th class='n'>광고비</th><th class='n'>하루 평균 클릭</th></tr></thead><tbody><tr><td>운영 전 (9/28~10/14)</td><td class='n'>17일</td><td class='n'>10,363</td><td class='n'>1,851</td><td class='n'>17.9%</td><td class='n'>88원</td><td class='n'>163,518원</td><td class='n'>108.9</td></tr><tr><td>운영 초기·정비 전 (10/15~20)</td><td class='n'>6일</td><td class='n'>2,781</td><td class='n'>442</td><td class='n'>15.9%</td><td class='n'>140원</td><td class='n'>62,014원</td><td class='n'>73.7</td></tr><tr><td>정비 후 (10/21~31)</td><td class='n'>11일</td><td class='n'>1,352</td><td class='n'>41</td><td class='n'>3.0%</td><td class='n'>2,553원</td><td class='n'>104,685원</td><td class='n'>3.7</td></tr></tbody></table></div>
+<div class="callout">정비 전 클릭은 'us outdoor advertising' 같은 범용 검색어에 몰려 있었고, 사이트 자체 기록에서도 같은 기간 검색 파트너(syndicatedsearch.goog)를 거친 인도·파키스탄·베트남 모바일 방문이 대량으로 확인됐습니다. 10/20 국가 지정과 검색 파트너 중지 이후 이 유입은 사라졌습니다.</div></div>
+<div class="grid">
+<div class="card"><h3>정비 전 클릭 상위 검색어 (9/28~10/20)</h3><div class="tw"><table class="tbl"><thead><tr><th>검색 키워드</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>광고비</th></tr></thead><tbody><tr><td>us outdoor advertising</td><td class='n'>8,841</td><td class='n'>1,541</td><td class='n'>151,296원</td></tr><tr><td>us ooh advertising</td><td class='n'>2,754</td><td class='n'>549</td><td class='n'>53,976원</td></tr><tr><td>us billboard advertising</td><td class='n'>1,086</td><td class='n'>148</td><td class='n'>14,365원</td></tr><tr><td>north america outdoor advertising</td><td class='n'>76</td><td class='n'>20</td><td class='n'>1,546원</td></tr><tr><td>global ooh agency</td><td class='n'>172</td><td class='n'>18</td><td class='n'>2,018원</td></tr><tr><td>global outdoor advertising</td><td class='n'>117</td><td class='n'>9</td><td class='n'>958원</td></tr></tbody></table></div></div>
+<div class="card"><h3>정비 후 클릭 상위 검색어 (10/21~31)</h3><div class="tw"><table class="tbl"><thead><tr><th>검색 키워드</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>광고비</th></tr></thead><tbody><tr><td>new york ooh advertising</td><td class='n'>457</td><td class='n'>25</td><td class='n'>66,495원</td></tr><tr><td>us outdoor advertising</td><td class='n'>274</td><td class='n'>7</td><td class='n'>17,344원</td></tr><tr><td>us ooh advertising</td><td class='n'>213</td><td class='n'>3</td><td class='n'>6,476원</td></tr><tr><td>new york billboard advertising</td><td class='n'>104</td><td class='n'>3</td><td class='n'>6,809원</td></tr><tr><td>singapore ooh media</td><td class='n'>12</td><td class='n'>2</td><td class='n'>5,058원</td></tr><tr><td>global outdoor advertising</td><td class='n'>124</td><td class='n'>1</td><td class='n'>2,503원</td></tr></tbody></table></div><p class="note" style="margin-top:var(--cds-gap-sm)">정비 후에는 'new york ooh advertising'이 클릭의 절반 이상을 차지합니다.</p></div>
+</div>
+<div class="sec">구글 검색광고 · 블루밍테라 SA - Korean <small>10/20 신설</small></div>
+<div class="grid">
+<div class="card"><div class="tw"><table class="tbl"><thead><tr><th>구간</th><th class='n'>일수</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>클릭률</th><th class='n'>클릭당 비용</th><th class='n'>광고비</th><th class='n'>하루 평균 클릭</th></tr></thead><tbody><tr><td>SA - Korean (10/21~31)</td><td class='n'>11일</td><td class='n'>336</td><td class='n'>20</td><td class='n'>6.0%</td><td class='n'>1,754원</td><td class='n'>35,077원</td><td class='n'>1.8</td></tr></tbody></table></div><p class="note" style="margin-top:var(--cds-gap-sm)">한국 내 해외 옥외광고 수요를 받기 위해 신설했고, 10/26 첫 실제 문의가 나왔습니다. 초기에 'LA월드컵' 같은 행사성 검색어 클릭이 섞여 10/23 일시중지·제외 처리했습니다.</p></div>
+<div class="card"><h3>클릭 상위 검색어</h3><div class="tw"><table class="tbl"><thead><tr><th>검색 키워드</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>광고비</th></tr></thead><tbody><tr><td>LA월드컵</td><td class='n'>54</td><td class='n'>6</td><td class='n'>8,174원</td></tr><tr><td>뉴욕타임스퀘어전광판</td><td class='n'>27</td><td class='n'>5</td><td class='n'>9,569원</td></tr><tr><td>해외옥외광고</td><td class='n'>79</td><td class='n'>4</td><td class='n'>7,897원</td></tr><tr><td>해외광고</td><td class='n'>91</td><td class='n'>2</td><td class='n'>4,037원</td></tr><tr><td>일본옥외광고</td><td class='n'>7</td><td class='n'>1</td><td class='n'>1,450원</td></tr><tr><td>뉴욕타임스퀘어전광판광고</td><td class='n'>1</td><td class='n'>1</td><td class='n'>1,995원</td></tr></tbody></table></div></div>
+</div>
+<div class="sec">구글 검색광고 · 에스킴</div>
+<div class="grid">
+<div class="card"><div class="tw"><table class="tbl"><thead><tr><th>구간</th><th class='n'>일수</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>클릭률</th><th class='n'>클릭당 비용</th><th class='n'>광고비</th><th class='n'>하루 평균 클릭</th></tr></thead><tbody><tr><td>운영 전 (9/28~10/14)</td><td class='n'>17일</td><td class='n'>2,671</td><td class='n'>118</td><td class='n'>4.4%</td><td class='n'>1,544원</td><td class='n'>182,149원</td><td class='n'>6.9</td></tr><tr><td>운영 기간 (10/15~31)</td><td class='n'>17일</td><td class='n'>2,128</td><td class='n'>103</td><td class='n'>4.8%</td><td class='n'>1,577원</td><td class='n'>162,475원</td><td class='n'>6.1</td></tr></tbody></table></div><p class="note" style="margin-top:var(--cds-gap-sm)">클릭률은 4.4% → 4.8%로 올랐고 클릭당 비용은 비슷합니다. 10/22 입찰 전략을 전환수 최대화로 바꿨다가 노출이 급감해 10/23 클릭수 최대화(최대 CPC 3,000원)로 되돌린 구간이 포함돼 있습니다.</p></div>
+<div class="card"><h3>클릭 상위 검색어 (10/15~31)</h3><div class="tw"><table class="tbl"><thead><tr><th>검색 키워드</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>광고비</th></tr></thead><tbody><tr><td>옥외광고</td><td class='n'>578</td><td class='n'>33</td><td class='n'>29,074원</td></tr><tr><td>서울옥외광고</td><td class='n'>403</td><td class='n'>18</td><td class='n'>32,496원</td></tr><tr><td>래핑광고</td><td class='n'>130</td><td class='n'>10</td><td class='n'>17,387원</td></tr><tr><td>홍대광고</td><td class='n'>74</td><td class='n'>9</td><td class='n'>21,862원</td></tr><tr><td>건물광고</td><td class='n'>151</td><td class='n'>6</td><td class='n'>10,627원</td></tr><tr><td>홍대옥외광고</td><td class='n'>47</td><td class='n'>6</td><td class='n'>12,198원</td></tr></tbody></table></div></div>
+</div>
+<div class="sec">네이버 검색광고 · 에스킴</div>
+<div class="grid">
+<div class="card"><div class="tw"><table class="tbl"><thead><tr><th>구간</th><th class='n'>일수</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>클릭률</th><th class='n'>클릭당 비용</th><th class='n'>광고비</th><th class='n'>하루 평균 클릭</th></tr></thead><tbody><tr><td>운영 전 (10/1~14)</td><td class='n'>14일</td><td class='n'>630</td><td class='n'>24</td><td class='n'>3.8%</td><td class='n'>1,689원</td><td class='n'>40,527원</td><td class='n'>1.7</td></tr><tr><td>운영 기간 (10/15~31)</td><td class='n'>17일</td><td class='n'>632</td><td class='n'>28</td><td class='n'>4.4%</td><td class='n'>1,815원</td><td class='n'>50,829원</td><td class='n'>1.6</td></tr></tbody></table></div><p class="note" style="margin-top:var(--cds-gap-sm)">운영 기간이 3일 길어 합계는 비슷하지만, 클릭이 LA광고 중심에서 성수OOH 중심으로 옮겨갔습니다. 10월 초 노출의 상당 부분은 'LA올림픽' 같은 행사성 검색어였습니다.</p></div>
+<div class="card"><h3>지역별 광고그룹</h3><div class="tw"><table class="tbl"><thead><tr><th>지역</th><th class='n'>노출(10/1~14)</th><th class='n'>클릭(10/1~14)</th><th class='n'>노출(10/15~31)</th><th class='n'>클릭(10/15~31)</th><th class='n'>광고비(10/15~31)</th></tr></thead><tbody><tr><td>LA광고</td><td class='n'>402</td><td class='n'>17</td><td class='n'>170</td><td class='n'>9</td><td class='n'>15,641원</td></tr><tr><td>한강버스</td><td class='n'>12</td><td class='n'>0</td><td class='n'>133</td><td class='n'>2</td><td class='n'>147원</td></tr><tr><td>강남OOH</td><td class='n'>97</td><td class='n'>2</td><td class='n'>129</td><td class='n'>5</td><td class='n'>15,834원</td></tr><tr><td>성수OOH</td><td class='n'>44</td><td class='n'>3</td><td class='n'>113</td><td class='n'>11</td><td class='n'>17,623원</td></tr><tr><td>홍대OOH</td><td class='n'>57</td><td class='n'>1</td><td class='n'>59</td><td class='n'>1</td><td class='n'>1,584원</td></tr><tr><td>이태원OOH</td><td class='n'>2</td><td class='n'>0</td><td class='n'>10</td><td class='n'>0</td><td class='n'>0원</td></tr><tr><td>한남OOH</td><td class='n'>10</td><td class='n'>1</td><td class='n'>10</td><td class='n'>0</td><td class='n'>0원</td></tr><tr><td>압구정OOH</td><td class='n'>6</td><td class='n'>0</td><td class='n'>8</td><td class='n'>0</td><td class='n'>0원</td></tr></tbody></table></div></div>
+</div>
+<div class="sec">LinkedIn · 블루밍테라 <small>10/29~31 (3일, UTC)</small></div>
+<div class="card mb"><div class="tw"><table class="tbl"><thead><tr><th>랜딩</th><th class='n'>노출</th><th class='n'>클릭</th><th class='n'>클릭률</th><th class='n'>광고비</th></tr></thead><tbody>
+<tr><td>Global</td><td class='n'>2,496</td><td class='n'>8</td><td class='n'>0.32%</td><td class='n'>98,627원</td></tr>
+<tr><td>APAC</td><td class='n'>3,056</td><td class='n'>7</td><td class='n'>0.23%</td><td class='n'>98,546원</td></tr></tbody></table></div>
+<p class="note" style="margin-top:var(--cds-gap-sm)">랜딩 URL 외 소재·타겟·예산을 같게 맞춘 테스트입니다. 판단 기준은 8주 운영 후 랜딩별 문의 수이며, 11/11 2주 점검에서 중간 결과를 공유드립니다.</p></div>
+<div class="sec">네이버 블로그 · 에스킴 6개 계정 <small>주간 유입 합계</small></div>
+<div class="card mb"><div class="tw"><table class="tbl"><thead><tr><th>주</th><th class='n'>9/28~</th><th class='n'>10/5~</th><th class='n'>10/12~</th><th class='n'>10/19~</th><th class='n'>10/26~</th></tr></thead><tbody><tr><td>6개 계정 합계</td><td class='n'>222</td><td class='n'>197</td><td class='n'>233</td><td class='n'>233</td><td class='n'>274</td></tr></tbody></table></div>
+<p class="note" style="margin-top:var(--cds-gap-sm)">블로그 통계는 주 단위로만 받을 수 있어 주간 합계로 정리했습니다. 10월 마지막 주에 274회로 가장 높았고, 성수·해외·중국 옥외광고 주제 검색 유입이 꾸준했습니다.</p></div>
+</section>
+
+<section class="pane" id="site" hidden>
+<div class="sec">사이트 유입 <small>GA4 기준 10/15~31</small></div>
+<div class="grid">
+<div class="card"><div class="site-head"><span class="dot" style="background:var(--c1)"></span><h3>블루밍테라 (방문 818건)</h3></div><div class="tw"><table class="tbl"><thead><tr><th>유입 유형</th><th class='n'>방문</th><th class='n'>비중</th><th class='n'>참여율</th><th class='n'>평균 체류</th></tr></thead><tbody><tr><td>광고</td><td class='n'>296</td><td class='n'>36.2%</td><td class='n'>65.5%</td><td class='n'>1분 52초</td></tr><tr><td>오가닉 검색</td><td class='n'>49</td><td class='n'>6.0%</td><td class='n'>57.1%</td><td class='n'>2분 12초</td></tr><tr><td>다이렉트</td><td class='n'>391</td><td class='n'>47.8%</td><td class='n'>34.0%</td><td class='n'>1분 11초</td></tr><tr><td>추천·소셜·기타</td><td class='n'>53</td><td class='n'>6.5%</td><td class='n'>47.2%</td><td class='n'>3분 29초</td></tr><tr><td>내부 테스트</td><td class='n'>29</td><td class='n'>3.5%</td><td class='n'>72.4%</td><td class='n'>8분 17초</td></tr></tbody></table></div>
+<p class="note" style="margin-top:var(--cds-gap-sm)">구글 광고 방문은 정비 전 6일(10/15~20) 232건, 정비 후 11일(10/21~31) 58건입니다. 정비 후 클릭 61건 대비 방문 기록 비율은 약 95%로 정상 범위입니다. 테스트 도메인 접속 6건은 제외했습니다.</p></div>
+<div class="card"><div class="site-head"><span class="dot" style="background:var(--c0)"></span><h3>에스킴 (방문 334건)</h3></div><div class="tw"><table class="tbl"><thead><tr><th>유입 유형</th><th class='n'>방문</th><th class='n'>비중</th><th class='n'>참여율</th><th class='n'>평균 체류</th></tr></thead><tbody><tr><td>광고</td><td class='n'>70</td><td class='n'>21.0%</td><td class='n'>58.6%</td><td class='n'>1분 31초</td></tr><tr><td>오가닉 검색</td><td class='n'>123</td><td class='n'>36.8%</td><td class='n'>59.3%</td><td class='n'>3분 6초</td></tr><tr><td>다이렉트</td><td class='n'>100</td><td class='n'>29.9%</td><td class='n'>32.0%</td><td class='n'>3분 36초</td></tr><tr><td>추천·소셜·기타</td><td class='n'>33</td><td class='n'>9.9%</td><td class='n'>54.5%</td><td class='n'>3분 54초</td></tr><tr><td>내부 테스트</td><td class='n'>8</td><td class='n'>2.4%</td><td class='n'>75.0%</td><td class='n'>10분 2초</td></tr></tbody></table></div>
+<p class="note" style="margin-top:var(--cds-gap-sm)">광고 방문 70건 중 구글 68건, 네이버 2건입니다. 네이버는 10/30 UTM 적용 전까지 광고 유입이 구분되지 않아 실제보다 적게 잡혔습니다.</p></div>
+</div>
+<div class="card"><h3>데이터를 볼 때 주의할 점</h3><ul class="list">
+<li><b>10/30 전에는 내부 접속이 섞여 있습니다.</b> 세팅·검수 접속(캐나다 데스크톱, 태그 미리보기)은 '내부 테스트'로 분류했지만, 일부는 다이렉트에 남아 있을 수 있습니다.</li>
+<li><b>10/22 다이렉트 급증은 뉴스레터 발송 영향입니다.</b> 뉴스레터 UTM 인계가 끝나, 앞으로 발송 유입은 다이렉트와 구분돼 추적될 예정입니다.</li>
+<li><b>유럽 방문은 쿠키 동의 전 GA4에 기록되지 않습니다.</b> 유럽 비중이 큰 LinkedIn Global 랜딩은 사이트 자체 방문 기록과 함께 비교합니다.</li>
+</ul></div>
+</section>
+
+
+<section class="pane" id="issue" hidden>
+<div class="sec">11월 계획 <small>11월 운영 타임라인 기준</small></div>
+<div class="card mb"><div class="tw"><table class="tbl"><thead><tr><th class="st">매체</th><th class="st">기간</th><th>내용</th></tr></thead><tbody><tr><td>LinkedIn</td><td>11/4~11/10</td><td>타겟 변경 효과·신규 소재 초기 성과 확인 → 11/11 2주 점검에서 유형별 우수 소재 정리</td></tr><tr><td>Meta</td><td>11/11~11/13</td><td>2주 점검에서 운영 여부 결정 → 운영 시 LinkedIn 소재로 세팅, 11/13 라이브</td></tr><tr><td>네이버 SA</td><td>11/9~11/20</td><td>성과 분석 → 11/13 개선안 공유 → 11/16~18 소재·확장소재·키워드 정리 → 해외 광고 블루밍테라 계정 이관 검토</td></tr><tr><td>구글 SA</td><td>11/16~11/25</td><td>검색어·키워드·소재 분석 → 11/23 개선안 공유 → 적용</td></tr><tr><td>리포트</td><td>매주 월요일</td><td>주간 성과 공유, 11월 개선 효과는 12월 첫 주 월간 리포트로 정리</td></tr><tr><td>사이트·GEO</td><td>11/26~11/30</td><td>AI 검색 유입·인용 현황 분석 → 아티클 개선안 (여유 시)</td></tr><tr><td>ChatGPT 광고</td><td>11월~12월 초</td><td>OpenAI ChatGPT 광고 집행 준비, 12월 초 라이브 목표</td></tr></tbody></table></div>
+<p class="note" style="margin-top:var(--cds-gap-sm)">LinkedIn KPI는 랜딩별 월 문의 20건, 문의당 비용 10만 원이며 운영 2개월 차부터 달성을 목표로 합니다.</p></div>
+<div class="sec">10월 발견 이슈와 조치</div>
+<div class="card"><div class="tw"><table class="tbl"><thead><tr><th>이슈</th><th>영향</th><th>조치</th><th class="st">상태</th></tr></thead><tbody><tr><td>블루밍테라 SA - Global 국가 미설정·검색 파트너 노출</td><td>인도·파키스탄·베트남 등 비목표 국가와 검색 파트너에서 저단가 클릭이 하루 100건 안팎 발생</td><td>10/20 국가 지정·검색 파트너 중지, 10/21 문안 개편</td><td>완료</td></tr><tr><td>블루밍테라 Global 전환 목표가 YouTube 참여로 설정</td><td>구글 광고 전환 수가 실제 문의와 무관하게 집계</td><td>10/29 리드 양식 제출로 변경</td><td>완료</td></tr><tr><td>에스킴 구글 광고 추적 URL 미설정</td><td>GA4에서 구글 광고 유입을 구분하기 어려움</td><td>10/28 최종 URL 접미사 설정</td><td>완료</td></tr><tr><td>네이버 검색광고 UTM 미적용·소재 오기</td><td>네이버 광고 유입이 사이트에서 구분되지 않음</td><td>10/30 UTM 적용·오기 수정, 11/2 작동 확인</td><td>완료</td></tr><tr><td>내부 접속이 GA4에 함께 집계</td><td>세팅·검수 접속이 방문과 문의 이벤트에 섞임</td><td>10/30 내부 IP 제외 적용</td><td>완료 (에스킴 사무실 IP 추가 검토)</td></tr><tr><td>유럽 방문의 GA4 누락 (쿠키 동의 전 미수집)</td><td>LinkedIn Global 랜딩 유입 대부분이 GA4에 남지 않아 랜딩 비교가 불리</td><td>사이트 자체 방문 기록 시트로 보완 (11/9부터 자동 업데이트)</td><td>보완 완료</td></tr><tr><td>APAC 메인 모바일 로딩 지연 (첫 화면 약 12초)</td><td>클릭 후 사이트 도착 전 이탈 가능성</td><td>개선 요청·적용</td><td>완료</td></tr><tr><td>뉴스레터 발송 유입이 다이렉트로 집계</td><td>10/22처럼 발송일마다 다이렉트 방문이 급증해 유입 경로 구분이 어려움</td><td>뉴스레터 UTM 사용법 인계, 이후 발송분부터 UTM으로 구분</td><td>완료</td></tr><tr><td>네이버 해외·중국OOH 광고그룹 소재 없음</td><td>해외 옥외광고 검색에 노출되지 않음</td><td>11/3 소재 등록, 해외OOH 11/4부터 노출·클릭 발생</td><td>완료</td></tr></tbody></table></div></div>
+</section>
+<section class="pane" id="setup" hidden>
+<div class="sec">10월 세팅·개선 내역 <small>날짜순</small></div>
+<div class="card"><div class="tw"><table class="tbl"><thead><tr><th class="st">날짜</th><th class="st">매체</th><th>내용</th></tr></thead><tbody><tr><td>10/20</td><td>구글 SA · 블루밍테라</td><td>Global 국가 타겟 설정: 미국·캐나다·싱가포르·독일·프랑스 (이전엔 국가 미설정으로 전 세계 노출)</td></tr><tr><td>10/20</td><td>구글 SA · 블루밍테라</td><td>위치 옵션: 관심 있는 사용자 포함 → 거주·방문 사용자(Presence)</td></tr><tr><td>10/20</td><td>구글 SA · 블루밍테라</td><td>검색 파트너 노출 중지</td></tr><tr><td>10/20</td><td>구글 SA · 블루밍테라</td><td>Global 캠페인의 한국어 키워드 328개 일시중지</td></tr><tr><td>10/20</td><td>구글 SA · 블루밍테라</td><td>&quot;블루밍테라 SA - Korean&quot; 신규 생성: 한국 타겟, 일 3,000원, 광고그룹 4개, 한국어 키워드 310개, 한국어 문안, 랜딩 /ko</td></tr><tr><td>10/20</td><td>구글 SA · 블루밍테라</td><td>두 캠페인에 UTM 접미사 추가, Korean 캠페인 라이브</td></tr><tr><td>10/21</td><td>구글 SA · 블루밍테라</td><td>Korean 입찰 전략: 전환수 최대화 → 클릭수 최대화 (전환 데이터 없이 노출 제한)</td></tr><tr><td>10/21</td><td>구글 SA · 블루밍테라</td><td>Global 노출 진단: 노출 점유율 10% 미만, 순위 손실 약 63%, 경매 순위 부족 확인</td></tr><tr><td>10/21</td><td>구글 SA · 블루밍테라</td><td>Global 최대 CPC 한도 5,000원 → 10,000원</td></tr><tr><td>10/21</td><td>구글 SA · 블루밍테라</td><td>Global 타겟 국가에 영국 추가</td></tr><tr><td>10/21</td><td>구글 SA · 블루밍테라</td><td>Global 영어 광고 전면 개편: 그룹별 헤드라인 15개, 설명 4개, 브랜드 헤드라인 3개 위치 1 고정</td></tr><tr><td>10/21</td><td>구글 SA · 블루밍테라</td><td>검색어 분석: outdoor advertising 계열 검색어가 가장 많음</td></tr><tr><td>10/21</td><td>구글 SA · 에스킴</td><td>에스킴 GA4·GTM 검수, 구글 애즈 전환 추적 연동</td></tr><tr><td>10/21</td><td>공통</td><td>브로셔 다운로드 이벤트 개발 요청, 명세 시트 업데이트 및 클라이언트 보고</td></tr><tr><td>10/22</td><td>구글 SA · 에스킴</td><td>에스킴 입찰 전략: 클릭수 최대화 → 전환수 최대화로 변경 (당일 노출 급감 확인)</td></tr><tr><td>10/23</td><td>구글 SA · 블루밍테라</td><td>Global 기존 광고(헤드라인 4개짜리) 일시중지</td></tr><tr><td>10/23</td><td>구글 SA · 블루밍테라</td><td>Global 04_해외: 영어 해외 도시 키워드 47개 추가(싱가포르 중심) + 신규 광고</td></tr><tr><td>10/23</td><td>구글 SA · 블루밍테라</td><td>Global 05_경쟁사 신설: 주요 경쟁사 키워드 23개 + 신규 광고</td></tr><tr><td>10/23</td><td>구글 SA · 블루밍테라</td><td>Korean 05_경쟁사 신설: 오브라운 키워드 2개 + 신규 광고</td></tr><tr><td>10/23</td><td>구글 SA · 블루밍테라</td><td>Korean 월드컵 키워드 정리: LA월드컵·LA월드컵광고·LA올림픽 일시중지, 제외 키워드 fifa·월드컵</td></tr><tr><td>10/23</td><td>구글 SA · 에스킴</td><td>에스킴 입찰 전략을 클릭수 최대화로 복귀, 최대 CPC 3,000원</td></tr><tr><td>10/27</td><td>LinkedIn</td><td>회사 리스트 3종 제작·업로드 (중국 기업 82개, 뷰티·럭셔리 194개, 기존 리드 68개)</td></tr><tr><td>10/27</td><td>측정</td><td>UTM 관리시트 제작 (매체별 UTM 생성·이력 관리)</td></tr><tr><td>10/27</td><td>Meta</td><td>Meta 고객 리스트 CSV 제작 (블루밍테라·에스킴), 방문자 오디언스 생성</td></tr><tr><td>10/28</td><td>구글 SA · 에스킴</td><td>에스킴 캠페인에 추적 URL 옵션(최종 URL 접미사) 설정 — GA4에서 구글 광고 유입 구분</td></tr><tr><td>10/28</td><td>LinkedIn</td><td>Global·APAC 캠페인 2개 세팅, 광고 4종 랜딩·UTM 검수, 심사 제출</td></tr><tr><td>10/28</td><td>측정</td><td>GTM 이메일 클릭(email_click) 이벤트 세팅, GA4 문의 키 이벤트(generate_lead) 등록</td></tr><tr><td>10/29</td><td>공통</td><td>검색어 보고서 기반 제외 키워드 추가(Global·Korean·에스킴)</td></tr><tr><td>10/29</td><td>구글 SA · 블루밍테라</td><td>Global 전환 목표가 YouTube 참여로 잡혀 있던 것을 리드 양식 제출로 변경</td></tr><tr><td>10/29</td><td>구글 SA · 블루밍테라</td><td>Korean AI Max·최종 URL 확장·텍스트 맞춤 끄기 (Global과 조건 통일)</td></tr><tr><td>10/29</td><td>구글 SA · 블루밍테라</td><td>해외 팝업 트럭 키워드 추가 (Global·Korean 02_북미, 범용+LA·NYC)</td></tr><tr><td>10/29</td><td>LinkedIn</td><td>랜딩 테스트 라이브 (Global·APAC 동일 조건)</td></tr><tr><td>10/30</td><td>측정</td><td>GA4 내부 접속 제외 설정 (내부 IP 필터 활성)</td></tr><tr><td>10/30</td><td>네이버 SA</td><td>UTM 적용, 소재 오기 수정, 네이버 SA 성과 관리 시트 제작</td></tr></tbody></table></div></div>
+</section>
+</div></div>
+<script>
+const tabs=document.querySelectorAll('.wr .tab');
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===t?'true':'false'));document.querySelectorAll('.wr .pane').forEach(p=>p.hidden=p.id!==t.dataset.tab);}));
+</script></body></html>
